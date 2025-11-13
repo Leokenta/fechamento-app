@@ -3,7 +3,7 @@ from flask_migrate import upgrade
 
 app = create_app()
 
-# Garante que o banco de dados esteja atualizado ao iniciar
+# Atualiza o banco de dados antes de iniciar
 with app.app_context():
     upgrade()
 
