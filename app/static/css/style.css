@@ -1,0 +1,239 @@
+/* =======================
+   ESTILO BASE DO SITE
+======================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fundo escuro */
+    color: #fff; /* Letras brancas */
+}
+
+a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   CABEÇALHO
+======================= */
+.site-header {
+    background-color: #1e1e1e;
+    padding: 15px 10px;
+    border-bottom: 2px solid #00bfff;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.site-header nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.site-header nav a {
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+/* =======================
+   CONTAINER PRINCIPAL
+======================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* =======================
+   MENSAGENS FLASH
+======================= */
+.flash-messages {
+    margin-bottom: 15px;
+}
+
+.flash {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.flash.success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.flash.error {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* =======================
+   BOTÕES
+======================= */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #00bfff;
+    color: #121212;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    background-color: #009acd;
+}
+
+/* =======================
+   FORMULÁRIOS
+======================= */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 3px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+form button {
+    margin-top: 10px;
+    background-color: #00bfff;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #009acd;
+}
+
+/* =======================
+   TABELAS
+======================= */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #333;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.table th {
+    background-color: #222;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+/* =======================
+   LINKS DE AÇÃO
+======================= */
+.link {
+    color: #00bfff;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   RODAPÉ
+======================= */
+.site-footer {
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #1e1e1e;
+    border-top: 2px solid #00bfff;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* =======================
+   RESPONSIVO PARA CELULARES
+======================= */
+@media screen and (max-width: 768px) {
+    .site-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .site-header nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .top-actions {
+        text-align: center;
+    }
+
+    .table th, .table td {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    form input, form textarea {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .table th, .table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .table tbody tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #333;
+    }
+
+    .table tbody tr td {
+        border: none;
+        padding: 6px 0;
+    }
+
+    .table tbody tr td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 3px;
+    }
+}

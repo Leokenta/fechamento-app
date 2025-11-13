@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Início{% endblock %}
+{% block content %}
+<section>
+<div class="top-actions">
+<a class="btn" href="{{ url_for('main.add') }}">Novo Fechamento</a>
+</div>
+
+<table class="table">
+<thead>
+<tr>
+<th>Cliente</th>
+<th>Data</th>
+<th>Descrição</th>
+<th>Valor Total</th>
+<th>Ações</th>
+</tr>
+</thead>
+<tbody>
+{% for f in fechamentos %}
+<tr>
+<td>{{ f.cliente }}</td>
+<td>{{ f.data.strftime('%d/%m/%Y') }}</td>
+<td>{{ f.descricao|truncate(80) }}</td>
+<td>R$ {{ f.valor_total_final|round(2) }}</td>
+<td>
+    <a class="link" href="{{ url_for('main.gerar_pdf', fechamento_id=f.id) }}" target="_blank">PDF</a> |
+    <a class="link" href="{{ url_for('main.edit', fechamento_id=f.id) }}">Editar</a> |
+    <form action="{{ url_for('main.delete', fechamento_id=f.id) }}" method="post" style="display:inline;" onsubmit="return confirm('Deseja realmente excluir?');">
+        <button type="submit" class="link" style="background:none;border:none;color:#f00;cursor:pointer;">Apagar</button>
+    </form>
+</td>
+</tr>
+{% else %}
+<tr><td colspan="5">Nenhum fechamento cadastrado.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</section>
+{% endblock %}

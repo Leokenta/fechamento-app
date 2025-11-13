@@ -1,0 +1,8 @@
+Flask>=2.2
+Flask-SQLAlchemy
+Flask-Migrate
+python-dotenv
+WeasyPrint
+SQLAlchemy
+psycopg2-binary
+gunicorn
